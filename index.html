@@ -1,234 +1,1046 @@
-Berikut adalah kode HTML lengkap dengan penambahan halaman baru untuk rincian biaya masuk pesantren yang berisi informasi biaya 3 juta, terdiri dari 2 juta untuk SPP dan 1 juta untuk asrama:
 
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Website resmi Pesantren Jejak Kemuliaan - Membentuk Generasi Qur'ani, Berilmu, Berkarakter, dan Berdaya Saing.">
-<title>Pesantren Jejak Kemuliaan | Portal Resmi</title>
+<meta name="description" content="Camp Qurani, hunian nyaman untuk keluarga dengan nilai-nilai Qurani.">
+<title>Camp Qurani | Hunian Berkah Keluarga</title>
+
 <style>
-:root{
-  --blue:#082b57;--blue2:#0b477f;--orange:#f28c28;--orange2:#ffad42;
-  --cream:#fffaf2;--white:#fff;--ink:#10233d;--muted:#65758b;
-  --line:#e7edf4;--shadow:0 18px 50px rgba(8,43,87,.12);
+:root {
+  --red: #c91f35;
+  --red2: #ef4056;
+  --dark: #291b20;
+  --muted: #6c6267;
+  --cream: #fff7f6;
+  --line: #f0d9dc;
 }
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
-a{text-decoration:none;color:inherit}
-.container{width:min(1160px,92%);margin:auto}
-.topbar{background:var(--blue);color:#fff;font-size:13px;padding:9px 0}
-.topbar .container{display:flex;justify-content:space-between;gap:20px}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue)}
-.logo-mark{width:45px;height:45px;border-radius:13px;background:linear-gradient(145deg,var(--blue),var(--blue2));display:grid;place-items:center;color:#fff;font-weight:900;font-size:19px;box-shadow:0 8px 20px rgba(8,43,87,.22)}
-.logo span small{display:block;font-size:10px;letter-spacing:2px;color:var(--orange);margin-top:-3px}
-nav{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:650}
-nav a{transition:.2s} nav a:hover{color:var(--orange)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:10px;font-weight:750;border:0;cursor:pointer}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(242,140,40,.24)}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-light{background:#fff;color:var(--blue);border:1px solid #dfe7ef}
-.menu{display:none;font-size:25px;cursor:pointer}
-.hero{min-height:650px;background:linear-gradient(115deg,rgba(5,29,58,.96),rgba(7,57,102,.87)),url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:#fff}
-.hero-content{max-width:720px;padding:80px 0}
-.badge{display:inline-flex;padding:7px 12px;border:1px solid rgba(255,255,255,.25);border-radius:30px;background:rgba(255,255,255,.08);font-size:13px;margin-bottom:18px}
-h1{font-size:clamp(42px,6vw,72px);line-height:1.04;margin:0 0 20px;letter-spacing:-2px}
-.hero p{font-size:18px;color:#dce8f4;max-width:650px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-stats{display:flex;gap:35px;margin-top:42px;flex-wrap:wrap}
-.hero-stats strong{font-size:28px;display:block}.hero-stats span{font-size:12px;color:#b9c9da}
-section{padding:85px 0}
-.section-head{max-width:720px;margin-bottom:42px}
-.kicker{color:var(--orange);font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
-h2{font-size:38px;line-height:1.15;margin:9px 0 12px;color:var(--blue)}
-.section-head p{color:var(--muted);margin:0}
-.grid{display:grid;gap:20px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 8px 30px rgba(8,43,87,.05)}
-.card h3{margin:10px 0 8px;color:var(--blue)}.card p{color:var(--muted);font-size:14px;margin:0}
-.icon{width:48px;height:48px;border-radius:13px;background:#fff1df;color:var(--orange);display:grid;place-items:center;font-size:22px}
-.about{background:var(--cream)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.photo{min-height:430px;border-radius:24px;background:url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=85') center/cover;box-shadow:var(--shadow)}
-.check{display:flex;gap:12px;margin:13px 0;color:#45566d}.check b{color:var(--orange)}
-.vision{background:var(--blue);color:#fff}.vision h2{color:#fff}.vision .section-head p{color:#c8d7e7}
-.vision .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}.vision .card h3{color:#fff}.vision .card p{color:#c8d7e7}
-.program{background:#f7f9fc}
-.program .card{min-height:210px}
-.number{font-size:38px;font-weight:900;color:var(--orange)}
-.ppdb{background:linear-gradient(135deg,#fff6e9,#fff)}
-.ppdb-box{background:#fff;border:1px solid #f4d8b1;border-radius:25px;padding:40px;box-shadow:var(--shadow)}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px 0}
-.step{padding:18px;border-radius:14px;background:#fff8ef;border:1px solid #f4dfc4}.step b{color:var(--orange);font-size:22px}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:22px}.form input,.form select,.form textarea{width:100%;padding:13px 14px;border:1px solid #dce5ee;border-radius:10px;font:inherit;outline:none}.form input:focus,.form select:focus{border-color:var(--orange)}.full{grid-column:1/-1}
-.notice{padding:13px 16px;background:#eef6ff;border-left:4px solid var(--blue);border-radius:8px;color:#40536a;font-size:13px}
-.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:190px 190px;gap:14px}.gallery div{border-radius:16px;background-size:cover;background-position:center}.g1{grid-row:span 2;background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80')}.g2{background-image:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=700&q=80')}.g3{background-image:url('https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=700&q=80')}.g4{background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80')}.g5{background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80')}
-.status{background:#f7f9fc}.status-box{max-width:650px;margin:auto;background:#fff;padding:32px;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
-.status-row{display:flex;gap:10px}.status-row input{flex:1;padding:14px;border:1px solid #dce5ee;border-radius:10px}
-#statusResult{display:none;margin-top:20px;padding:18px;border-radius:12px;background:#eef8f2;color:#23623e}
-.cta{background:linear-gradient(110deg,var(--blue),#0c568f);color:#fff}.cta h2{color:#fff}.cta p{color:#d7e5f2}
-footer{background:#061e3c;color:#c7d4e3;padding:55px 0 20px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}.footer-title{color:#fff;font-weight:800;margin-bottom:15px}.footer-links a{display:block;font-size:14px;margin:8px 0}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:18px;font-size:12px;display:flex;justify-content:space-between}
-.modal{display:none;position:fixed;inset:0;background:rgba(3,17,34,.72);z-index:100;align-items:center;justify-content:center;padding:20px}.modal.active{display:flex}.modal-box{background:#fff;width:min(720px,100%);max-height:90vh;overflow:auto;border-radius:20px;padding:30px;position:relative}.close{position:absolute;right:20px;top:15px;font-size:26px;cursor:pointer}
-@media(max-width:900px){nav{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:0 15px 30px rgba(0,0,0,.08)}nav.show{display:flex}.menu{display:block}.grid-3,.grid-4{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.photo{min-height:300px}.steps{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.topbar .container{display:none}.nav{height:70px}.hero{min-height:650px}.hero-content{padding:65px 0}.hero-stats{gap:20px}section{padding:60px 0}h2{font-size:31px}.grid-3,.grid-4,.form{grid-template-columns:1fr}.gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:170px 170px 170px}.g1{grid-row:span 2}.g5{grid-column:span 2}.steps{grid-template-columns:1fr}.status-row{flex-direction:column}.footer-grid{grid-template-columns:1fr}.copyright{flex-direction:column;gap:7px}}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1.3;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 21px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-red {
+  background: linear-gradient(120deg,var(--red),var(--red2));
+  color: white;
+  box-shadow: 0 8px 20px #c91f3530;
+}
+
+.btn-white {
+  background: white;
+  color: var(--red);
+}
+
+.hero {
+  background: linear-gradient(120deg,#fff0f1,#fff 55%,#ffe0e4);
+  padding: 85px 0;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 30px;
+  background: #ffe0e4;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(38px,5vw,62px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 24px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.benefits span::before {
+  content: "✓ ";
+  color: var(--red);
+}
+
+.hero-image {
+  min-height: 350px;
+  border-radius: 28px;
+  padding: 22px;
+  background: linear-gradient(145deg,#f3b7c0,#fff4f3);
+  box-shadow: 0 20px 55px #8b1b301c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.house-illustration {
+  width: 100%;
+  max-width: 390px;
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(#f8cbd0 0%,#fff0ed 65%,#9fc693 65%);
+}
+
+.sun {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: #fff2c8;
+  border-radius: 50%;
+}
+
+.house {
+  position: absolute;
+  width: 220px;
+  height: 125px;
+  background: #fffaf6;
+  border: 3px solid #d78c91;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.roof {
+  position: absolute;
+  top: -65px;
+  left: -18px;
+  width: 250px;
+  height: 75px;
+  background: var(--red);
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+}
+
+.door {
+  position: absolute;
+  bottom: 0;
+  left: 85px;
+  width: 45px;
+  height: 72px;
+  background: #a84c58;
+}
+
+.window {
+  position: absolute;
+  top: 28px;
+  width: 38px;
+  height: 35px;
+  background: #bce1e9;
+  border: 4px solid #d78c91;
+}
+
+.window.left {
+  left: 12px;
+}
+
+.window.right {
+  right: 12px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 35px;
+  background: #83b57d;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(28px,4vw,42px);
+  line-height: 1.2;
+  margin: 12px 0;
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.house-cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 25px #54111b08;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px #54111b15;
+}
+
+.card-top {
+  padding: 28px 20px;
+  text-align: center;
+  background: linear-gradient(135deg,#ffe7e9,#fff7f6);
+  color: var(--red);
+}
+
+.card-top .house-icon {
+  font-size: 54px;
+  line-height: 1.3;
+}
+
+.card-content {
+  padding: 23px;
+}
+
+.card-content h3 {
+  font-size: 23px;
+}
+
+.card-content .desc {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--red);
+  margin: 15px 0;
+  line-height: 1.3;
+}
+
+.price small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  color: var(--muted);
+}
+
+.specs {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.spec {
+  background: #fff0f1;
+  color: #9f182d;
+  border-radius: 7px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.card-content p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.card-content .btn {
+  display: block;
+  width: 100%;
+}
+
+.note {
+  margin-top: 25px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+.about {
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-panel {
+  padding: 35px;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#b8182d,#ef4056);
+  color: white;
+  box-shadow: 0 18px 40px #c91f3525;
+}
+
+.about-panel h3 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.about-panel p {
+  color: #ffe9ec;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.value {
+  border: 1px solid #ffffff45;
+  background: #ffffff15;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.about-copy p {
+  color: var(--muted);
+  margin: 15px 0;
+}
+
+.mission-list {
+  list-style: none;
+  display: grid;
+  gap: 13px;
+}
+
+.mission-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.mission-list li::before {
+  content: "✓";
+  color: var(--red);
+  font-weight: bold;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.step {
+  border: 1px solid var(--line);
+  padding: 25px;
+  border-radius: 18px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #ffe5e8;
+  color: var(--red);
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.step h3 {
+  margin: 15px 0 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cta {
+  padding-top: 0;
+}
+
+.cta-panel {
+  background: linear-gradient(115deg,#b8182d,#ef4056);
+  color: white;
+  border-radius: 25px;
+  padding: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.cta-panel h2 {
+  margin-top: 0;
+}
+
+.cta-panel p {
+  color: #ffe9ec;
+  max-width: 600px;
+}
+
+.cta-panel .btn {
+  background: white;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.contact-info {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #ffe9ec;
+}
+
+footer {
+  background: #291b20;
+  color: white;
+  padding: 35px 0;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-row p {
+  color: #cdbdc2;
+  font-size: 12px;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #ffcbd2;
+  font-size: 13px;
+}
+
+.copyright {
+  border-top: 1px solid #ffffff20;
+  margin-top: 25px;
+  padding-top: 18px;
+  font-size: 11px;
+  color: #b7a6ac;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  background: #168b50;
+  color: white;
+  padding: 13px 19px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 8px 24px #168b5040;
+}
+
+@media(max-width:850px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .house-cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media(max-width:560px) {
+  .hero {
+    padding: 55px 0;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  .hero-image {
+    min-height: 300px;
+    padding: 12px;
+  }
+
+  .house-cards {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .about-panel,
+  .cta-panel {
+    padding: 25px;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .brand small {
+    font-size: 8px;
+  }
+
+  .nav > .btn {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+  .whatsapp-float {
+    right: 10px;
+    bottom: 10px;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<div class="topbar"><div class="container"><span>📍 Kampus Pendidikan Jejak Kemuliaan</span><span>📞 +62 812-3456-7890 &nbsp; | &nbsp; ✉ info@jejakmulia.sch.id</span></div></div>
-
 <header>
-<div class="container nav">
-<a class="logo" href="#beranda"><div class="logo-mark">JK</div><span>JEJAK KEMULIAAN<small>PESANTREN</small></span></a>
-<div class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
-<nav>
-<a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#visi">Visi Misi</a><a href="#program">Program</a><a href="#kegiatan">Kegiatan</a><a href="#dokumentasi">Dokumentasi</a><a href="#ppdb">PPDB</a><a href="#biaya">Rincian Biaya</a>
-<a class="btn btn-orange" href="#ppdb">Daftar Sekarang</a>
-</nav>
-</div>
+  <div class="container nav">
+    <a class="brand" href="#beranda">
+      <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="Logo Camp Qurani">
+        <defs>
+          <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#ef4056"/>
+            <stop offset="1" stop-color="#b8182d"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#logoGradient)"/>
+        <path d="M12 31 L32 14 L52 31 M18 29 V49 H46 V29"
+              fill="none" stroke="#fff" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M27 49 V36 H37 V49" fill="#fff"/>
+        <path d="M32 8 C25 15 39 15 32 8" fill="#ffe5a3"/>
+      </svg>
+
+      <span>
+        CAMP QURANI
+        <small>HUNIAN BERKAH KELUARGA</small>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#tipe">Tipe Rumah</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#proses">Cara Membeli</a>
+    </nav>
+
+    <a class="btn btn-red" href="#kontak">Konsultasi ↗</a>
+  </div>
 </header>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="beranda">
-<div class="container hero-content">
-<div class="badge">✦ PORTAL RESMI PESANtren JEJAK KEMULIAAN</div>
-<h1>Menapaki Jalan Ilmu, Menjemput Kemuliaan.</h1>
-<p>Pesantren Jejak Kemuliaan hadir untuk membentuk generasi Qur’ani yang berilmu, beradab, mandiri, dan siap memberikan manfaat bagi umat.</p>
-<div class="actions"><a class="btn btn-orange" href="#ppdb">Mulai Pendaftaran →</a><a class="btn btn-light" href="#profil">Kenali Pesantren</a></div>
-<div class="hero-stats"><div><strong>10+</strong><span>Program Unggulan</span></div><div><strong>500+</strong><span>Santri & Alumni</span></div><div><strong>25+</strong><span>Tenaga Pendidik</span></div></div>
-</div></section>
+  <div class="container hero-grid">
 
-<section id="profil">
-<div class="container split">
-<div class="photo"></div>
-<div><div class="kicker">Tentang Kami</div><h2>Tempat Bertumbuhnya Generasi yang Berkarakter</h2>
-<p>Pesantren Jejak Kemuliaan merupakan lembaga pendidikan yang memadukan pembelajaran Al-Qur’an, ilmu keislaman, pendidikan umum, pembentukan karakter, dan keterampilan hidup.</p>
-<div class="check"><b>✓</b><span>Lingkungan pendidikan yang aman, disiplin, dan religius.</span></div>
-<div class="check"><b>✓</b><span>Pembinaan adab dan karakter sebagai fondasi pendidikan.</span></div>
-<div class="check"><b>✓</b><span>Program tahfiz, akademik, bahasa, kepemimpinan, dan kemandirian.</span></div>
-<div class="actions"><a class="btn btn-blue" href="#program">Lihat Program</a></div>
-</div></div></section>
+    <div>
+      <span class="badge">HUNIAN NYAMAN • LINGKUNGAN QURANI</span>
 
-<section class="vision" id="visi">
-<div class="container">
-<div class="section-head"><div class="kicker">Arah Pendidikan</div><h2>Visi, Misi & Nilai</h2><p>Menjadikan pendidikan sebagai perjalanan untuk menumbuhkan ilmu, iman, adab, dan kontribusi.</p></div>
-<div class="grid grid-3">
-<div class="card"><div class="icon">🎯</div><h3>Visi</h3><p>Menjadi pesantren unggulan yang melahirkan generasi Qur’ani, berilmu, berakhlak mulia, mandiri, dan mampu memberi dampak positif bagi masyarakat.</p></div>
-<div class="card"><div class="icon">📖</div><h3>Misi</h3><p>Menyelenggarakan pendidikan terpadu berbasis Al-Qur’an dan Sunnah, membangun budaya belajar, memperkuat adab, serta mengembangkan potensi dan kepemimpinan santri.</p></div>
-<div class="card"><div class="icon">🌱</div><h3>Nilai Utama</h3><p>Iman, ilmu, adab, disiplin, kemandirian, kepedulian, integritas, dan semangat memberikan manfaat.</p></div>
-</div></div></section>
+      <h1>
+        Temukan rumah yang terasa
+        <span>seperti pulang.</span>
+      </h1>
 
-<section id="program" class="program">
-<div class="container"><div class="section-head"><div class="kicker">Pendidikan</div><h2>Program Unggulan Pesantren</h2><p>Rangkaian program dirancang agar santri berkembang secara seimbang: ruhiyah, intelektual, sosial, dan keterampilan.</p></div>
-<div class="grid grid-3">
-<div class="card"><div class="number">01</div><h3>Tahfiz & Al-Qur’an</h3><p>Tahsin, tahfiz, muroja’ah, tadabbur, dan pembiasaan interaksi intensif bersama Al-Qur’an.</p></div>
-<div class="card"><div class="number">02</div><h3>Pendidikan Diniyah</h3><p>Aqidah, fiqih, hadits, sirah, akhlak, bahasa Arab, dan ilmu-ilmu dasar keislaman.</p></div>
-<div class="card"><div class="number">03</div><h3>Akademik</h3><p>Pembelajaran akademik terarah dengan budaya literasi, riset sederhana, dan pengembangan potensi santri.</p></div>
-<div class="card"><div class="number">04</div><h3>Leadership</h3><p>Organisasi santri, public speaking, kepemimpinan, manajemen kegiatan, dan pengambilan keputusan.</p></div>
-<div class="card"><div class="number">05</div><h3>Bahasa</h3><p>Pembiasaan Bahasa Arab dan Bahasa Inggris melalui percakapan, kosakata, dan aktivitas harian.</p></div>
-<div class="card"><div class="number">06</div><h3>Kemandirian</h3><p>Life skills, entrepreneurship, kedisiplinan, tanggung jawab, kebersihan, dan pengelolaan diri.</p></div>
-</div></div></section>
+      <p>
+        Selamat datang di Camp Qurani, pilihan hunian untuk
+        membangun kehidupan keluarga yang nyaman, hangat,
+        dan bertumbuh bersama nilai-nilai kebaikan.
+      </p>
 
-<section id="kegiatan">
-<div class="container"><div class="section-head"><div class="kicker">Aktivitas Santri</div><h2>Kegiatan yang Membentuk Pengalaman</h2><p>Pendidikan tidak berhenti di ruang kelas. Santri belajar melalui pengalaman, pelayanan, kreativitas, dan kebersamaan.</p></div>
-<div class="grid grid-4">
-<div class="card"><div class="icon">📚</div><h3>Kajian & Halaqah</h3><p>Belajar Al-Qur’an, hadits, adab, dan ilmu keislaman secara rutin.</p></div>
-<div class="card"><div class="icon">🏃</div><h3>Olahraga</h3><p>Aktivitas fisik untuk menjaga kebugaran dan membangun sportivitas.</p></div>
-<div class="card"><div class="icon">🎤</div><h3>Public Speaking</h3><p>Latihan pidato, presentasi, MC, dan komunikasi di depan publik.</p></div>
-<div class="card"><div class="icon">🌿</div><h3>Outdoor Activity</h3><p>Outbound, camping, bakti sosial, dan kegiatan pembentukan karakter.</p></div>
-</div></div></section>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#tipe">Lihat Tipe Rumah ↓</a>
+        <a class="btn" style="border:1px solid #f0d9dc" href="#kontak">
+          Tanya Harga
+        </a>
+      </div>
 
-<section id="dokumentasi" class="about">
-<div class="container"><div class="section-head"><div class="kicker">Dokumentasi</div><h2>Jejak Perjalanan Santri</h2><p>Dokumentasi kegiatan belajar, kebersamaan, studi tour, dan pengalaman berharga santri.</p></div>
-<div class="gallery"><div class="g1"></div><div class="g2"></div><div class="g3"></div><div class="g4"></div><div class="g5"></div></div>
-<div class="actions"><a class="btn btn-blue" href="#dokumentasi">Lihat Seluruh Galeri</a></div>
-</div></section>
+      <div class="benefits">
+        <span>Pilihan tipe beragam</span>
+        <span>Konsultasi mudah</span>
+        <span>Ramah keluarga</span>
+      </div>
+    </div>
 
-<section class="ppdb" id="ppdb">
-<div class="container"><div class="ppdb-box">
-<div class="section-head"><div class="kicker">PPDB Online</div><h2>Penerimaan Peserta Didik Baru</h2><p>Daftarkan putra-putri Anda melalui sistem pendaftaran online Pesantren Jejak Kemuliaan.</p></div>
-<div class="steps"><div class="step"><b>01</b><br>Isi Formulir</div><div class="step"><b>02</b><br>Upload Berkas</div><div class="step"><b>03</b><br>Verifikasi</div><div class="step"><b>04</b><br>Tes Seleksi</div><div class="step"><b>05</b><br>Pengumuman</div></div>
-<div class="notice">ℹ️ Formulir berikut adalah demo front-end. Untuk penggunaan nyata, hubungkan ke database/server agar data pendaftar tersimpan aman.</div>
-<form class="form" onsubmit="submitPPDB(event)">
-<input required placeholder="Nama Lengkap Calon Santri">
-<input required placeholder="Nomor WhatsApp">
-<input required placeholder="Tempat, Tanggal Lahir">
-<select required><option value="">Pilih Jenjang</option><option>SD / MI</option><option>SMP / MTs</option><option>SMA / MA</option></select>
-<input required placeholder="Nama Orang Tua / Wali">
-<input required placeholder="Asal Sekolah">
-<select required><option value="">Program Pilihan</option><option>Tahfiz & Al-Qur’an</option><option>Program Reguler</option><option>Program Unggulan</option></select>
-<input type="file" class="full" accept=".pdf,.jpg,.jpeg,.png">
-<textarea class="full" rows="3" placeholder="Catatan / informasi tambahan"></textarea>
-<button class="btn btn-orange full" type="submit">Kirim Pendaftaran</button>
-</form>
-</div></div></section>
+    <div class="hero-image">
+      <div class="house-illustration">
+        <div class="sun"></div>
+        <div class="ground"></div>
 
-<section class="status" id="status">
-<div class="container"><div class="section-head" style="margin:auto;text-align:center"><div class="kicker">Layanan PPDB</div><h2>Cek Status Pendaftaran</h2><p>Masukkan nomor pendaftaran untuk melihat status proses PPDB.</p></div>
-<div class="status-box"><div class="status-row"><input id="regNo" placeholder="Contoh: JK-2026-00125"><button class="btn btn-blue" onclick="checkStatus()">Cek Status</button></div><div id="statusResult">✅ <strong>Status Pendaftaran:</strong> Berkas Anda sedang dalam proses verifikasi.</div></div>
-</div></section>
+        <div class="house">
+          <div class="roof"></div>
+          <div class="window left"></div>
+          <div class="window right"></div>
+          <div class="door"></div>
+        </div>
+      </div>
+    </div>
 
-<section id="biaya" class="ppdb" style="background:#fff6e9;padding-bottom:100px;">
-<div class="container">
-<div class="ppdb-box" style="max-width:600px">
-<div class="section-head">
-<div class="kicker">Informasi Biaya</div>
-<h2>Rincian Biaya Masuk Pesantren</h2>
-<p>Berikut rincian biaya masuk Pesantren Jejak Kemuliaan untuk tahun ajaran terbaru.</p>
-</div>
-<div class="card" style="padding:30px; box-shadow:none; border:none; background:#fff6e9;">
-<h3 style="color:var(--blue); margin-bottom:20px;">Total Biaya: <span style="color:var(--orange); font-size:26px;">Rp 3.000.000,-</span></h3>
-<ul style="list-style:none; padding-left:0; font-size:16px; color:var(--ink);">
-<li>▪️ <strong>SPP:</strong> Rp 2.000.000,-</li>
-<li>▪️ <strong>Asrama:</strong> Rp 1.000.000,-</li>
-</ul>
-<p style="margin-top:25px; color:var(--muted); font-size:14px;">*Biaya dapat berubah sesuai kebijakan pesantren. Silakan hubungi bagian administrasi untuk informasi lebih lanjut.</p>
-<div class="actions" style="margin-top:30px;">
-<a class="btn btn-orange" href="#ppdb">Daftar Sekarang</a>
-</div>
-</div>
-</div>
-</div>
+  </div>
 </section>
 
-<section class="cta"><div class="container split"><div><div class="kicker">Bersama Menjemput Masa Depan</div><h2>Mulai Jejak Kemuliaan Putra-Putri Anda.</h2><p>Bangun pendidikan yang tidak hanya mencerdaskan, tetapi juga membentuk adab, karakter, dan keberanian untuk memberi manfaat.</p></div><div style="text-align:right"><a class="btn btn-orange" href="#ppdb">Daftar PPDB Sekarang →</a></div></div></section>
+<!-- PILIHAN RUMAH -->
+<section id="tipe">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Pilihan Hunian</div>
+      <h2>Rumah untuk Setiap Tahap Kehidupan</h2>
+      <p>
+        Temukan tipe rumah yang sesuai dengan kebutuhan keluarga.
+        Harga yang ditampilkan merupakan estimasi awal dan
+        bukan harga resmi pengembang.
+      </p>
+    </div>
+
+    <div class="house-cards">
+
+      <!-- TIPE 36 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="house-icon">⌂</div>
+          <strong>STARTER HOME</strong>
+        </div>
+
+        <div class="card-content">
+          <h3>Tipe 36</h3>
+          <div class="desc">Praktis untuk keluarga muda</div>
+
+          <div class="price">
+            Rp300 jutaan
+            <small>Estimasi harga awal</small>
+          </div>
+
+          <div class="specs">
+            <span class="spec">LT 60 m²*</span>
+            <span class="spec">LB 36 m²</span>
+            <span class="spec">2 Kamar</span>
+          </div>
+
+          <p>
+            Tata ruang ringkas dengan ruang keluarga,
+            kamar tidur, kamar mandi, dan area dapur.
+          </p>
+
+          <a class="btn btn-red" href="#kontak">
+            Tanyakan Tipe Ini ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- TIPE 45 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="house-icon">⌂</div>
+          <strong>FAVORIT KELUARGA</strong>
+        </div>
+
+        <div class="card-content">
+          <h3>Tipe 45</h3>
+          <div class="desc">Lebih lapang untuk bertumbuh</div>
+
+          <div class="price">
+            Rp400 jutaan
+            <small>Estimasi harga awal</small>
+          </div>
+
+          <div class="specs">
+            <span class="spec">LT 72 m²*</span>
+            <span class="spec">LB 45 m²</span>
+            <span class="spec">2–3 Kamar</span>
+          </div>
+
+          <p>
+            Ruang lebih lega untuk aktivitas sehari-hari,
+            berkumpul bersama keluarga, dan menerima tamu.
+          </p>
+
+          <a class="btn btn-red" href="#kontak">
+            Tanyakan Tipe Ini ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- TIPE 60 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="house-icon">⌂</div>
+          <strong>EXTRA SPACE</strong>
+        </div>
+
+        <div class="card-content">
+          <h3>Tipe 60</h3>
+          <div class="desc">Nyaman dengan ruang ekstra</div>
+
+          <div class="price">
+            Rp550 jutaan
+            <small>Estimasi harga awal</small>
+          </div>
+
+          <div class="specs">
+            <span class="spec">LT 90 m²*</span>
+            <span class="spec">LB 60 m²</span>
+            <span class="spec">3 Kamar</span>
+          </div>
+
+          <p>
+            Alternatif bagi keluarga yang membutuhkan ruang
+            lebih luas dan fleksibel untuk berkembang.
+          </p>
+
+          <a class="btn btn-red" href="#kontak">
+            Tanyakan Tipe Ini ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      *Harga dan luas tanah merupakan estimasi konsep website.
+      Konfirmasikan harga, spesifikasi, legalitas, dan biaya tambahan
+      kepada pengembang sebelum dipublikasikan.
+    </p>
+
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section class="about" id="tentang">
+  <div class="container about-grid">
+
+    <div class="about-panel">
+      <div class="eyebrow" style="color:#ffe5a3">
+        Tentang Camp Qurani
+      </div>
+
+      <h3>Lebih dari Sekadar Tempat Tinggal</h3>
+
+      <p>
+        Camp Qurani membawa gagasan hunian yang mendukung
+        kehidupan keluarga: lingkungan yang nyaman,
+        hubungan bertetangga yang baik, dan ruang untuk
+        menumbuhkan kebiasaan positif.
+      </p>
+
+      <div class="values">
+        <div class="value">⌂ Hunian Nyaman</div>
+        <div class="value">♡ Berorientasi Keluarga</div>
+        <div class="value">✦ Nilai Qurani</div>
+        <div class="value">✓ Layanan Informatif</div>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <div class="eyebrow">Visi & Misi</div>
+
+      <h2>Mewujudkan Hunian yang Nyaman dan Penuh Kebaikan</h2>
+
+      <p>
+        <strong>Visi</strong><br>
+        Menjadi pilihan hunian keluarga yang nyaman, aman,
+        dan mendukung kehidupan yang berlandaskan nilai-nilai Qurani.
+      </p>
+
+      <p><strong>Misi</strong></p>
+
+      <ul class="mission-list">
+        <li>
+          Menghadirkan pilihan rumah fungsional sesuai kebutuhan keluarga.
+        </li>
+        <li>
+          Mendorong lingkungan yang harmonis, peduli, dan saling menghormati.
+        </li>
+        <li>
+          Memberikan informasi produk, harga, dan proses pembelian secara jelas.
+        </li>
+        <li>
+          Mendukung keluarga membangun kebiasaan baik dalam kehidupan sehari-hari.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CARA MEMBELI -->
+<section id="proses">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Langkah Pembelian</div>
+      <h2>Mulai dari Konsultasi Sederhana</h2>
+      <p>
+        Pelajari tahapan awal sebelum menentukan pilihan rumah
+        yang tepat bagi keluarga Anda.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Pilih Tipe Rumah</h3>
+        <p>
+          Tentukan tipe dan kebutuhan ruang sesuai keluarga
+          serta anggaran yang tersedia.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Konsultasi</h3>
+        <p>
+          Tanyakan harga resmi, lokasi proyek, ketersediaan unit,
+          spesifikasi, dan skema pembayaran.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Survey dan Proses Lanjut</h3>
+        <p>
+          Jadwalkan kunjungan lokasi dan periksa dokumen serta
+          rincian biaya sebelum melakukan transaksi.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA PEMBELIAN -->
+<section class="cta" id="kontak">
+  <div class="container">
+    <div class="cta-panel">
+
+      <div>
+        <h2>Rumah Impian Anda Dimulai dari Sini.</h2>
+
+        <p>
+          Hubungi tim Camp Qurani untuk mendapatkan informasi
+          harga resmi, promo yang berlaku, dan jadwal survey lokasi.
+        </p>
+
+        <div class="contact-info">
+          <strong>Lokasi proyek:</strong>
+          Belum tersedia
+          <br>
+          <strong>WhatsApp:</strong>
+          Belum tersedia
+        </div>
+      </div>
+
+      <a class="btn" href="#kontak">
+        Hubungi Pemasaran
+      </a>
+
+    </div>
+  </div>
+</section>
+
 </main>
 
+<!-- FOOTER -->
 <footer>
-<div class="container"><div class="footer-grid">
-<div><div class="footer-title">PESANTREN JEJAK KEMULIAAN</div><p>Menapaki Jalan Ilmu, Menjemput Kemuliaan. Pendidikan Qur’ani untuk generasi berilmu, beradab, mandiri, dan bermanfaat.</p></div>
-<div><div class="footer-title">Navigasi</div><div class="footer-links"><a href="#profil">Profil</a><a href="#visi">Visi Misi</a><a href="#program">Program</a><a href="#kegiatan">Kegiatan Santri</a></div></div>
-<div><div class="footer-title">PPDB</div><div class="footer-links"><a href="#ppdb">Pendaftaran Online</a><a href="#status">Cek Status</a><a href="#biaya">Rincian Biaya</a><a href="#">Panduan PPDB</a></div></div>
-<div><div class="footer-title">Hubungi Kami</div><div class="footer-links"><a href="#">WhatsApp</a><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Google Maps</a></div></div>
-</div><div class="copyright"><span>© 2026 Pesantren Jejak Kemuliaan. All Rights Reserved.</span><span>Portal Resmi Pesantren</span></div></div>
+  <div class="container">
+
+    <div class="footer-row">
+
+      <div class="brand" style="color:white">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="2" y="2" width="60" height="60" rx="18"
+                fill="#ef4056"/>
+          <path d="M12 31 L32 14 L52 31 M18 29 V49 H46 V29"
+                fill="none" stroke="#fff" stroke-width="3.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27 49 V36 H37 V49" fill="#fff"/>
+        </svg>
+
+        <span>
+          CAMP QURANI
+          <small style="color:#e9cbd0">
+            HUNIAN BERKAH KELUARGA
+          </small>
+        </span>
+      </div>
+
+      <div>
+        <strong>Media Sosial</strong>
+        <p>Instagram: Belum tersedia</p>
+        <p>Facebook: Belum tersedia</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Camp Qurani.
+      Harga dan spesifikasi dapat berubah sesuai informasi resmi pengembang.
+    </div>
+
+  </div>
 </footer>
 
-<div class="modal" id="successModal"><div class="modal-box"><span class="close" onclick="closeModal()">×</span><div class="kicker">Pendaftaran Berhasil</div><h2>Alhamdulillah, formulir diterima!</h2><p>Nomor pendaftaran Anda:</p><h2 id="generatedNo" style="color:var(--orange)"></h2><p>Simpan nomor ini untuk mengecek status pendaftaran. Pada versi produksi, nomor ini akan tersimpan otomatis di database dan dapat dikirim melalui WhatsApp/email.</p><button class="btn btn-blue" onclick="closeModal()">Selesai</button></div></div>
-
 <script>
-function submitPPDB(e){
- e.preventDefault();
- const no='JK-2026-'+String(Math.floor(10000+Math.random()*90000));
- document.getElementById('generatedNo').textContent=no;
- document.getElementById('successModal').classList.add('active');
- e.target.reset();
-}
-function closeModal(){document.getElementById('successModal').classList.remove('active')}
-function checkStatus(){
- const val=document.getElementById('regNo').value.trim();
- const box=document.getElementById('statusResult');
- if(!val){box.style.display='block';box.innerHTML='⚠️ Silakan masukkan nomor pendaftaran terlebih dahulu.';return}
- box.style.display='block';
- box.innerHTML='🟢 <strong>Status Pendaftaran:</strong> Data ditemukan. Berkas sedang dalam proses verifikasi oleh panitia PPDB.';
-}
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('show')));
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
-```
-
-Halaman baru "Rincian Biaya" sudah ditambahkan dengan link pada navigasi dan isi berupa rincian biaya masuk sebesar Rp 3.000.000,- dengan detail Rp 2.000.000 untuk SPP dan Rp 1.000.000 untuk Asrama.
-
-Jika ada penyesuaian lain yang Anda perlukan, silakan beri tahu!
